@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa da Itália | Gestão de Estoque</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div id="loginTela">
+        <div class="login-card">
+            <i class="fas fa-wine-glass-alt" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"></i>
+            <h1>Casa da Itália</h1>
+            <div class="dev">SISTEMA POR ANDRÉ A. LIBERATTO</div>
+            <input type="text" id="user" placeholder="Usuário">
+            <input type="password" id="pass" placeholder="Senha">
+            <button onclick="login()">ACESSAR PAINEL</button>
+            <div id="loginMsg"></div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-brand"><i class="fas fa-utensils"></i> Casa da Itália</div>
+        <div class="dev-name">POR ANDRÉ A. LIBERATTO</div>
+        
+        <div onclick="show('dash')" id="nav-dash" class="nav-item active"><i class="fas fa-th-large"></i> Dashboard</div>
+        <div onclick="show('estoque')" id="nav-estoque" class="nav-item"><i class="fas fa-boxes"></i> Estoque</div>
+        <div onclick="show('receitas')" id="nav-receitas" class="nav-item"><i class="fas fa-scroll"></i> Receitas</div>
+        
+        <div onclick="backup()" class="nav-item" style="margin-top: 2rem; color: var(--accent)"><i class="fas fa-download"></i> Backup</div>
+        <div onclick="location.reload()" class="nav-item" style="color: var(--secondary)"><i class="fas fa-sign-out-alt"></i> Sair</div>
+    </div>
+
+    <div class="main">
+        <div class="footer-dev">Desenvolvido por André A. Liberatto</div>
+
+        <div id="dash">
+            <div class="header-flex">
+                <h1 class="title">Visão Geral</h1>
+                <div id="dataAtual" style="font-weight: 600; color: var(--accent)"></div>
+            </div>
+
+            <div class="grid-stats">
+                <div class="stat-card"><h4>Total Itens</h4><p id="st-total">0</p></div>
+                <div class="stat-card"><h4>Valor Estoque</h4><p id="st-valor">R$ 0</p></div>
+                <div class="stat-card"><h4>Abaixo do Mínimo</h4><p id="st-baixo" style="color: var(--secondary)">0</p></div>
+                <div class="stat-card"><h4>Pratos Ativos</h4><p id="st-pratos">0</p></div>
+            </div>
+
+            <div class="glass-panel">
+                <h3 style="margin-bottom: 20px;">Distribuição Financeira</h3>
+                <div style="height: 300px;"><canvas id="chartGeral"></canvas></div>
+            </div>
+        </div>
+
+        <div id="estoque" style="display:none">
+            <h1 class="title" style="margin-bottom: 30px;">Gestão de Insumos</h1>
+            
+            <div class="glass-panel">
+                <h3>+ Novo Insumo</h3><br>
+                <div class="form-grid">
+                    <input id="in_nome" placeholder="Nome">
+                    <select id="in_cat">
+                        <option value="">Categoria...</option>
+                        <option>Massas</option><option>Vinhos</option><option>Carnes</option><option>Laticínios</option>
+                    </select>
+                    <input id="in_un" placeholder="Unid (Kg, L)">
+                    <input id="in_qtd" type="number" placeholder="Qtd">
+                    <input id="in_min" type="number" placeholder="Qtd Mín">
+                    <input id="in_custo" type="number" placeholder="Custo Unit">
+                </div>
+                <button class="btn-add" onclick="addInsumo()">SALVAR INSUMO</button>
+            </div>
+
+            <div class="glass-panel">
+                <table>
+                    <thead>
+                        <tr><th>Insumo</th><th>Categoria</th><th>Qtd Atual</th><th>Custo</th><th>Status</th><th>Ações</th></tr>
+                    </thead>
+                    <tbody id="listaEstoque"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="receitas" style="display:none">
+            <h1 class="title" style="margin-bottom: 30px;">Fichas Técnicas</h1>
+            <div class="glass-panel">
+                <h3>Criar Prato</h3><br>
+                <div class="form-grid">
+                    <input id="p_nome" placeholder="Nome do Prato" style="grid-column: span 2">
+                    <input id="p_venda" type="number" placeholder="Preço de Venda R$">
+                </div>
+                <button class="btn-add" onclick="salvarPrato()">REGISTRAR PRATO</button>
+            </div>
+
+            <div class="glass-panel">
+                <table id="tabelaPratos">
+                    <thead><tr><th>Prato</th><th>Custo Produção</th><th>Venda</th><th>Margem</th><th>Ações</th></tr></thead>
+                    <tbody id="listaPratos"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    </body>
+</html>

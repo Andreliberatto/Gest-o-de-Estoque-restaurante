@@ -1,0 +1,55 @@
+        :root {
+            --primary: #008c45; 
+            --secondary: #cd212a; 
+            --accent: #d4a373;  
+            --light: #fffaf5;    
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --sidebar-width: 260px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; transition: 0.2s; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--light); color: var(--dark); display: flex; min-height: 100vh; }
+
+      
+        #loginTela { position: fixed; inset: 0; z-index: 9999; background: linear-gradient(135deg, var(--primary) 0%, #005a2c 100%); display: flex; justify-content: center; align-items: center; }
+        .login-card { background: var(--white); padding: 3rem; border-radius: 8px; width: 400px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); text-align: center; }
+        .login-card h1 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 5px; }
+        .login-card .dev { font-size: 0.7rem; color: #999; margin-bottom: 2rem; font-weight: 700; letter-spacing: 1px; }
+        .login-card input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; }
+        .login-card button { width: 100%; padding: 12px; background: var(--secondary); color: white; border: none; border-radius: 4px; font-weight: 700; cursor: pointer; margin-top: 1rem; }
+        #loginMsg { font-size: 0.8rem; color: var(--secondary); margin-top: 10px; font-weight: 700; }
+
+  
+        .sidebar { width: var(--sidebar-width); background: var(--dark); color: white; padding: 2rem 1rem; position: fixed; height: 100vh; }
+        .sidebar-brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.2rem; display: flex; align-items: center; gap: 10px; }
+        .sidebar-brand i { color: var(--primary); }
+        .sidebar .dev-name { font-size: 9px; color: var(--accent); margin-bottom: 2rem; font-weight: 700; }
+        .nav-item { padding: 12px 15px; border-radius: 4px; color: #bbb; text-decoration: none; margin-bottom: 5px; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
+        .nav-item:hover { background: rgba(255,255,255,0.05); color: white; }
+        .nav-item.active { background: var(--primary); color: white; }
+
+     
+        .main { margin-left: var(--sidebar-width); width: 100%; padding: 40px; }
+        .header-flex { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .title { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--dark); }
+
+        .grid-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 40px; }
+        .stat-card { background: var(--white); padding: 20px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-bottom: 4px solid var(--accent); }
+        .stat-card h4 { font-size: 0.75rem; color: #888; text-transform: uppercase; }
+        .stat-card p { font-size: 1.8rem; font-weight: 700; color: var(--dark); }
+
+        .glass-panel { background: var(--white); border-radius: 4px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th { text-align: left; padding: 15px; background: #f9f9f9; font-size: 0.8rem; color: #666; text-transform: uppercase; }
+        td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        .badge { padding: 4px 10px; border-radius: 2px; font-size: 0.7rem; font-weight: 700; }
+        .bg-ok { background: #e6fffa; color: #008c45; }
+        .bg-low { background: #fff5f5; color: #cd212a; }
+
+  
+        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+        input, select { padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; }
+        .btn-add { background: var(--primary); color: white; border: none; padding: 12px 25px; cursor: pointer; font-weight: 700; margin-top: 15px; }
+
+        .footer-dev { position: fixed; bottom: 20px; right: 20px; font-size: 11px; color: #999; }
