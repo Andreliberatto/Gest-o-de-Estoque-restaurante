@@ -64,8 +64,3 @@ Este projeto é uma aplicação web que permite gerenciar o estoque de insumos, 
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
-
----
-
-*Desenvolvido com ❤️ para o restaurante Casa da Itália*</content>
-<parameter name="filePath">c:\Users\Andre\Desktop\Portfoli\Gestão de Estoque restaurante\README.md
