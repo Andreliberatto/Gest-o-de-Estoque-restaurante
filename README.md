@@ -5,7 +5,7 @@ Um sistema web simples para gestão de estoque e receitas de restaurante, desenv
 ## 📋 Descrição
 
 Este projeto é uma aplicação web que permite gerenciar o estoque de insumos, controlar receitas e monitorar o desempenho financeiro do restaurante. Utiliza armazenamento local do navegador para persistência de dados.
-<img src="rascunh.jpeg">
+<img src="rascunh.bmp">
 ## ✨ Funcionalidades
 
 - **Login Seguro**: Acesso protegido com usuário e senha
